@@ -1,0 +1,29 @@
+/*
+ * This class uses a scramble method to scramble a word.
+ * It includes a driver class that calls for an input by the user.
+ * The scrambled string will be outputted.
+ */
+ 
+public class ScrambleWord{
+
+    public static char[] scrambleAWord(String word){
+        char[] c = word.toCharArray();
+        for(int i = 0; i < word.length()-1; i++){
+            int randomNum = (int)(Math.random() * (c.length - 1));
+            char temp = c[i];
+            c[i] = c[randomNum];
+            c[randomNum] = temp;
+        }
+        return c;
+    }
+    
+    public static void main(String[]args){
+        Scanner io = new Scanner (System.in);
+        System.out.println("Enter word to be scrambled");
+        String word = io.nextLine();
+        char[] getWord = scrambleAWord(word);
+        for(int i = 0; i < getWord.length; i++)
+            System.out.print(getWord[i]);
+    }
+    
+}
