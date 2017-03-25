@@ -1,5 +1,6 @@
 /*
- * This class uses a scramble method to scramble a word.
+ * This class uses a scramble method to scramble a word or a string of numbers.
+ * This version cannot be used on strings with spaces yet. 
  * It includes a driver class that calls for an input by the user.
  * The scrambled string will be outputted.
  */
