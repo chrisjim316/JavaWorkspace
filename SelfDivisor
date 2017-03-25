@@ -4,7 +4,8 @@
    * Only positive integers called be called self-divisors.
    * Any positive integers with a 0 is not a self-divisor. 
    */
-   
+public class selfDivisor{
+
    public boolean selfDivisor ( int number ){
         int n = number;
           while ( n > 0 ){
@@ -15,3 +16,5 @@
           }
        return true; 
    }
+   
+}
