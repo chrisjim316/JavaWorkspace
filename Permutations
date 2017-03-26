@@ -10,13 +10,13 @@ public class Permutations{
 //no duplicates situation. 
     public static boolean arePermutations1(int[] a1, int[] a2){
         for(int i = 0; i < a1.length; i++){
-            int count = 0;
+                int count = 0;
             for(int j = 0; j < a2.length; j++){
                 if(a1[i] == a2[j])
-                count = 1;
+                   count = 1;
             }
-            if(count != 1)
-            return false;
+                if(count != 1)
+                   return false;
         }
         return true;
     }
@@ -24,23 +24,22 @@ public class Permutations{
 //yes duplicates situation. 
     public static boolean arePermutations2(int[] a1, int[] a2){
         ArrayList<Integer> secondArray = new ArrayList<Integer>();
-        for(int integerValue: a2){
+         for(int integerValue: a2){
             secondArray.add(integerValue);
-        }
+         }
         
-        for(int i = 0; i < a1.length ; i++){
+          for(int i = 0; i < a1.length ; i++){
              for(int j = 0; j < secondArray.size(); j++){
                  if(a1[i] == secondArray.get(j).intValue())
                  secondArray.remove(j);
-             }                
+          }                
         }
          
         if(secondArray.size() == 0)
-        return true;
+           return true;
         else 
-        return false;
-        
-        }  
+           return false;
+    }  
         
 //Test run.
     public static void main(String[]args){
