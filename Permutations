@@ -1,11 +1,14 @@
 /*
- * Currently all in quadratic runtime. Will be updated with linear solution soon.
- * Currently takes two int arrays only for comparison.
+ * Some in 0(n^2) and one in 0(n). 
+ * arePermutations1() & arePermutations2() takes two int arrays.
+ * arePermutations3() takes two strings. 
  * @return true if they are permutations of each other.
  */
 
 import java.util.*;
 public class Permutations{
+    
+    
     
 //no duplicates situation. 
     public static boolean arePermutations1(int[] a1, int[] a2){
@@ -20,6 +23,10 @@ public class Permutations{
         }
         return true;
     }
+    
+    
+    
+    
     
 //yes duplicates situation. 
     public static boolean arePermutations2(int[] a1, int[] a2){
@@ -40,8 +47,42 @@ public class Permutations{
         else 
            return false;
     }  
-        
-//Test run.
+           
+           
+           
+           
+           
+//Taken from Cracking the Code Interview.
+//The only linear solution here. 
+
+    public class Permutation {
+	public boolean arePermutations3(String s, String t) {
+		if(s.length() != t.length()) {
+			return false;
+		}
+
+		int[] letters = new int[256];
+
+		char[] s_array = s.toCharArray();
+		for(char c : s_array) {
+			letters[c]++;
+		}
+
+		for(int i = 0; i < t.length(); i++) {
+			int c = (int)t.charAt(i);
+			if(--letters[c] < 0) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+}
+    
+    
+    
+    
+    //Test run.
     public static void main(String[]args){
               System.out.println("Your 2 arrays to compare: ");
         int[] a1 = {2, 3, 5, 6, 2};
@@ -51,8 +92,10 @@ public class Permutations{
            for(int j : a2)
                System.out.print(j + " ");
                System.out.print("T/F. Are these two arrays permutations?");
+               System.out.println(" "+ arePermutations1(a1, a2));
                System.out.println(" "+ arePermutations2(a1, a2));
+               System.out.println(" "+ arePermutations3(a1, a2));
         
     }
-    
+   
 }
