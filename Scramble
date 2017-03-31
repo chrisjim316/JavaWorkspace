@@ -4,7 +4,8 @@
  * It includes a driver class that calls for an input by the user.
  * The scrambled string will be outputted.
  */
- 
+
+import java.util.Scanner;
 public class ScrambleWord{
 
     public static char[] scrambleAWord(String word){
