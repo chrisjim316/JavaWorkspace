@@ -19,13 +19,57 @@ public class ScrambleWord{
         return c;
     }
     
+    
+  public static int indexOf(char[] x, char c, int startPos){
+        int index = -1; 
+        for( int i = startPos; i < x.length; i++){
+            if(x[i] == c)
+            index = i;
+        }
+        return index; 
+    }
+    
+    
+    public static char[] scrambleAPhrase(String phrase){
+        char[] c = phrase.toCharArray();
+        int currentIndex = 0; 
+        int pos = indexOf(c, ' ', currentIndex); 
+        while( pos >= 0){
+            for( int i = currentIndex; i < pos; i++){
+                int randomNum = currentIndex (int)(Math.random() * currentIndex + (pos - currentIndex));
+                char temp = c[i];
+                c[i] = c[randomNum];
+                c[randomNum] = temp;
+            }
+            
+            currentIndex = pos + 1;
+            pos = indexOf(c, ' ', currentIndex); 
+            
+        }
+        return c;
+    }
+    
+  
+
+    
     public static void main(String[]args){
         Scanner io = new Scanner (System.in);
         System.out.println("Enter word to be scrambled");
         String word = io.nextLine();
         char[] getWord = scrambleAWord(word);
-        for(int i = 0; i < getWord.length; i++)
+        for(int i = 0; i < getWord.length; i++){
             System.out.print(getWord[i]);
+        }
+        System.out.println();    
+
+        System.out.println("Enter phrase to be scrambled");    
+        String phrase = io.nextLine();
+        char[] getPhrase = scrambleAPhrase(phrase);
+        for(int i = 0; i < getPhrase.length; i++){
+            System.out.print(getPhrase[i]);
+        }
+        
+            
     }
     
 }
