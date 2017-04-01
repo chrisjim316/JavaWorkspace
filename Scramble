@@ -1,7 +1,7 @@
 /*
  * This class uses a scramble method to scramble a word or a phrase
- * Second method has the ability to scramble phrases with blanks.
- * Second method will output with blanks in its original positions. 
+ * scrambleAPhrase method has the ability to scramble phrases with blanks.
+ * scrambleAPhrase method will output with blanks in its original positions. 
  * It includes a driver class that calls for inputs by the user. 
  * The scrambled string/phrase will be outputted.
  */
