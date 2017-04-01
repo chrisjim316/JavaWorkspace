@@ -1,13 +1,15 @@
 /*
- * This class uses a scramble method to scramble a word or a string of numbers.
- * This version cannot be used on strings with spaces yet. 
- * It includes a driver class that calls for an input by the user.
- * The scrambled string will be outputted.
+ * This class uses a scramble method to scramble a word or a phrase
+ * Second method has the ability to scramble phrases with blanks.
+ * Second method will output with blanks in its original positions. 
+ * It includes a driver class that calls for inputs by the user. 
+ * The scrambled string/phrase will be outputted.
  */
-
+ 
 import java.util.Scanner;
 import java.util.ArrayList;
 public class ScrambleWord{
+
 
     public static char[] scrambleAWord(String word){
         char[] c = word.toCharArray();
@@ -20,15 +22,20 @@ public class ScrambleWord{
         return c;
     }
     
+    
+    
+    
     public static int indexOf(ArrayList<String> a, String s){
-        int index = -1;
         for(int i = 0; i < a.size(); i++){
             if(((String)a.get(i)).equals(s)){
-                index = i;
+                return i;
             }
         }
-        return index; 
+        return -1; 
     }
+    
+    
+    
     
     public static ArrayList<String> scrambleAPhrase(String phrase){
         ArrayList<String> letters = new ArrayList<String>(); 
@@ -50,18 +57,18 @@ public class ScrambleWord{
             for(int i = 0; i < pos; i++){
                 result.add(letters.get(i));
             }
-            result.add( new String(" ")); 
-
             
-            for(int i = 0; i < pos; i++){
+            result.add( new String(" ")); 
+            
+            
+            for(int i = 0; i <= pos; i++){
                 letters.remove(0);
             }
             
             pos = indexOf(letters, " ");
         }
         
-        
-        if(pos == -1 && letters.size() != 0){
+         if(pos == -1){
             for(int i = 0; i < letters.size(); i++){
                 int randomNum = (int)(Math.random() * letters.size()); 
                 String temp = (String)letters.get(i);
@@ -69,34 +76,39 @@ public class ScrambleWord{
                 letters.set(randomNum, temp);
             }
             
-             for(int i = 0; i < letters.size(); i++){
+            for(int i = 0; i < letters.size(); i++){
                 result.add(letters.get(i));
-            }
-            result.add( new String(" ")); 
-        }
-        
+            }            
+            
+            for(int i = 0; i < letters.size(); i++){
+                letters.remove(0);
+            }        
+        }    
         return result;
-    }
+}// end scrambleAPhrase method 
   
-// Test runs. 
+  
+  
+  
+  
+//Test runs. 
     public static void main(String[]args){
         Scanner io = new Scanner (System.in);
         System.out.println("Enter word to be scrambled");
         String word = io.nextLine();
         char[] getWord = scrambleAWord(word);
-        for(int i = 0; i < getWord.length; i++){
-            System.out.print(getWord[i]);
-        }
+            for(int i = 0; i < getWord.length; i++){
+                 System.out.print(getWord[i]);
+            }
         System.out.println();    
+        System.out.println();  
 
-        System.out.println("Enter phrase to be scrambled");    
+        System.out.println("Enter phrase to be scrambled (finish your phrase with a space): ");    
         String phrase = io.nextLine();
         ArrayList<String> getPhrase = scrambleAPhrase(phrase);
-        for(String s: getPhrase){
-            System.out.print(s);
-        }
-        
-            
+            for(String s: getPhrase){
+                 System.out.print(s);
+            }         
     }
     
-}
+}// end class 
