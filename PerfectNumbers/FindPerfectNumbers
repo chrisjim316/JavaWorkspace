@@ -35,7 +35,7 @@ public class findPerfectNumbers{
         long max = input.nextLong();
         
         for( long i = 0 ; i <= max; i++){
-            if(isPrime((long)Math.pow(2,i)-1))
+            if(isPrime((long)Math.pow(2,i)-1) && i != 1)
             System.out.println( ((long)Math.pow(2, i-1)) * ((long)Math.pow(2, i) -1)  + " is a perfect number."); 
         }
     }//end test run
