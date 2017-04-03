@@ -33,7 +33,10 @@ public class PerfectNumbers{
         Scanner input = new Scanner (System.in); 
         System.out.print("Enter the number to be tested: ");
         int i = input.nextInt();
+        if(i!=0)
         System.out.printf("Is a perfect number: " + isPerfectNumber(i));
+        else 
+        System.out.printf("Is a perfect number: false");
     }
     
     
