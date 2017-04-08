@@ -2,7 +2,11 @@
  *Last modified: April 8th, 2017 
  *The program terminates after n tries by the computer.
  *Output win or lose. 
+ *If the computer won output number of attempts. 
+ *Computer isn't smart enough yet to make an effective guess with the "hints the program provides". 
+ *Currently works best for small scope. 
  */ 
+ 
 import java.util.Scanner;
 public class GuessingGameSimulation{
     public static void main(String[] args){
@@ -21,7 +25,8 @@ public class GuessingGameSimulation{
             int guess = (int)(Math.random() * 100) + 1;
         
         if(guess == randomNum)
-            System.out.println("The computer took a first shot and won!");       
+            System.out.println("The computer took a first shot and won!");      
+            
         while(numTries > 0 && guess != randomNum){
             if(guess > randomNum)
                 numTries--;
@@ -29,14 +34,16 @@ public class GuessingGameSimulation{
                 numTries--;
    
             if(numTries != 0){
-                guess = (int)(Math.random() * 100) + 1;
+                    guess = (int)(Math.random() * 100) + 1;
                 if(guess == randomNum)
-                    System.out.println("Computer found the answer!");       
+                    System.out.println("Computer found the answer! after " + numTries + " tries.");     
             }
             
             if(numTries == 0)
                 System.out.println("Machines aren't perfect.");
             
-      }
-  }
-}
+      }//end while
+      
+   }
+   
+}//end class 
