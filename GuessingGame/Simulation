@@ -1,0 +1,39 @@
+/*Guessing Game Simulation.
+ *Last modified: April 8th, 2017 
+ *The program terminates after n tries by the computer.
+ *Output win or lose. 
+ */ 
+import java.util.Scanner;
+public class GuessingGameSimulation{
+    public static void main(String[] args){
+        Scanner io = new Scanner(System.in);   
+        //generates a random number as the answer
+        int randomNum = (int)(Math.random() * 100) + 1;  
+        System.out.println("(For debugging) The answer is: "+ randomNum);
+        //numberOfTriesTheComputerHave
+        System.out.println("How many tries do the computer have?");
+        int numTries = io.nextInt();  
+        System.out.println("Objective: guess a number between 1 and 100, inclusive");
+        System.out.println("Computer: I'll get it right in no time.");
+        int guess = (int)(Math.random() * 100) + 1;
+        
+        if(guess == randomNum)
+            System.out.println("The computer took a first shot and won!");       
+        while(numTries > 0 && guess != randomNum){
+            if(guess > randomNum)
+                numTries--;
+            if(guess < randomNum)
+                numTries--;
+   
+            if(numTries != 0){
+                guess = (int)(Math.random() * 100) + 1;
+                if(guess == randomNum)
+                    System.out.println("Computer found the answer!");       
+            }
+            
+            if(numTries == 0)
+                System.out.println("Machines aren't perfect.");
+            
+      }
+  }
+}
