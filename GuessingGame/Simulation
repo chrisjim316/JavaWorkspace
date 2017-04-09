@@ -1,10 +1,9 @@
 /*Guessing Game Simulation.
- *Last modified: April 8th, 2017 
+ *Last modified: April 9th, 2017 
  *The program terminates after n tries by the computer.
  *Output win or lose. 
  *If the computer won output number of attempts. 
- *Computer isn't smart enough yet to make an effective guess with the "hints the program provides". 
- *Currently works best for small scope. 
+ *It can effectively resize its scope of guess if guess > randomNum.
  */ 
  
 import java.util.Scanner;
@@ -24,26 +23,64 @@ public class GuessingGameSimulation{
         System.out.println("Computer: I'll get it right in no time.");
             int guess = (int)(Math.random() * 100) + 1;
         
+        System.out.println("First guess: " + guess);
+        ArrayList<Integer> upperBound = new ArrayList<Integer>();
+        
         if(guess == randomNum)
             System.out.println("The computer took a first shot and won!");      
             
         while(numTries > 0 && guess != randomNum){
-            if(guess > randomNum)
-                numTries--;
-            if(guess < randomNum)
-                numTries--;
-   
-            if(numTries != 0){
+           if(guess == randomNum){ 
+           
+                    numTries = totalTries - numTries; 
+                    System.out.println("Computer found the answer! after " + numTries + " tries."); 
+                    
+            } else if (guess > randomNum){
+            
+                    upperBound.add(guess);
+                    guess = (int)(Math.random()* guess) + 1;
+                    
+                    System.out.println(guess); //shows computer's guess 
+                    numTries--;
+                    
+            } else if (guess < randomNum && totalTries - numTries != 1){
+            
+                    //generate randomNum up until the smallest number it guessed before.  
+                    int smallest = findSmallest(upperBound); 
+                    
+                    //debugging purposes: System.out.println("Smallest number is: " + smallest);
+                    
+                    guess = (int)(Math.random()* smallest) + 1;
+                    System.out.println(guess); //shows computer's guess
+                    numTries--;
+                    
+            } else {
+            
                     guess = (int)(Math.random() * 100) + 1;
-                if(guess == randomNum)
-                    System.out.println("Computer found the answer! after " + numTries + " tries.");     
+                    System.out.println(guess); //shows computer's guess
+                    
             }
             
-            if(numTries == 0)
-                System.out.println("Machines aren't perfect.");
+         }//end while 
+         
+        numTries = totalTries - numTries; //calculate total number of attempts 
+        
+        if(guess == randomNum)
+            System.out.println("Computer found the answer! after " + numTries + " tries."); 
+        else 
+            System.out.println("Machines aren't perfect.");
             
-      }//end while
-      
-   }
-   
+     }  
+     
+     //find smallest value in ArrayList
+    public static int findSmallest(ArrayList<Integer> list){
+       int smallest = list.get(0).intValue();
+       for(Integer value: list){
+           if(value < smallest){
+               smallest = value; 
+           }
+       }
+       return smallest;  
+    }
+    
 }//end class 
