@@ -1,0 +1,8 @@
+import java.util.ArrayList;
+
+public class Hotel{
+
+    private Reservation[] hotelRooms;
+    private ArrayList<String> waitList = new ArrayList<String>();      
+    
+}
