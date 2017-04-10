@@ -1,9 +1,10 @@
 /*Guessing Game Simulation.
- *Last modified: April 9th, 2017 
+ *Last modified: April 11th, 2017 
  *The program terminates after n tries by the computer.
  *Output win or lose. 
  *If the computer won output number of attempts. 
  *It can effectively resize its scope of guess if guess > randomNum.
+ *It can not, however, deal with lowerBounds effectively yet except with the first try.
  */ 
  
 import java.util.Scanner;
@@ -18,13 +19,16 @@ public class GuessingGameSimulation{
         //numberOfTriesTheComputerHave
         System.out.println("How many tries do the computer have?");
             int numTries = io.nextInt();  
+            int totalTries = numTries; 
             
         System.out.println("Objective: guess a number between 1 and 100, inclusive");
         System.out.println("Computer: I'll get it right in no time.");
             int guess = (int)(Math.random() * 100) + 1;
-        
+            numTries--;
+            
         System.out.println("First guess: " + guess);
         ArrayList<Integer> upperBound = new ArrayList<Integer>();
+        ArrayList<Integer> lowerBound = new ArrayList<Integer>();    
         
         if(guess == randomNum)
             System.out.println("The computer took a first shot and won!");      
@@ -55,13 +59,19 @@ public class GuessingGameSimulation{
                     numTries--;
                     
             } else {
-            
+                    lowerBound.add(guess);
+                    int largest = findLargest(lowerBound);
+                    
+                    //debugging purposes: System.out.println("Largest number is: " + largest);
+                    
                     guess = (int)(Math.random() * 100) + 1;
                     System.out.println(guess); //shows computer's guess
-                    
+                   
+                    if(guess < 50)
+                    guess += largest; 
             }
             
-         }//end while 
+        }//end while 
          
         numTries = totalTries - numTries; //calculate total number of attempts 
         
@@ -81,6 +91,17 @@ public class GuessingGameSimulation{
            }
        }
        return smallest;  
+    }
+    
+    //find largest value in ArrayList
+    public static int findLargest(ArrayList<Integer> list){
+       int largest = list.get(0).intValue();
+       for(Integer value: list){
+           if(value > largest){
+               largest = value; 
+           }
+       }
+       return largest;  
     }
     
 }//end class 
