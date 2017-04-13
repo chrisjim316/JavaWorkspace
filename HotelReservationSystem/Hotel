@@ -3,6 +3,25 @@ import java.util.ArrayList;
 public class Hotel{
 
     private Reservation[] hotelRooms;
-    private ArrayList<String> waitList = new ArrayList<String>();      
+    private ArrayList<String> waitList = new ArrayList<String>();     
     
-}
+    
+    //create reservation if there are an empty room for the guest.
+    //otherwise, add the guest to the end of the waitList.
+    //@return null if no empty rooms are found.
+    //@return Reservation if a reservation has been created for an empty room
+    
+    public Reservation requestRoom(String guestName){
+        for(int i = 0; i < hotelRooms.length; i++){
+            if( hotelRooms[i] == null){
+                hotelRooms[i] = new Reservation(guestName, i);
+                return hotelRooms[i];
+            }
+        }
+        waitList.add(guestName);
+        return null;
+    }
+    
+    
+    
+}//end class 
