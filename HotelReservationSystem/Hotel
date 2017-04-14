@@ -22,6 +22,24 @@ public class Hotel{
         return null;
     }
     
+    //cancel this particular reservation 
+    //to be added: the guest can only cancel the reservation two days prior to check in.
+    
+    public void cancelReservation(Reservation res){
+    
+        int roomNum = res.getRoomNumber();
+        String guestName = res.getGuestName();
+        
+        if(hotelRooms[roomNum] != null){
+            hotelRooms[roomNum] = null;
+                 System.out.println("Dear " + guestName + "your reservation has been successfully cancelled.");
+                 System.out.println("In the meantime please check out our other wonderful services.");  
+        } else {        
+                 System.out.println("Dear " + guestName + "there was no reservation associated with your account.");
+                 System.out.println("If you think this is a mistake please contact us via phone or email.");         
+        }
+        
+    }
     
     
 }//end class 
