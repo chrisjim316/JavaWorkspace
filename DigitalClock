@@ -36,4 +36,16 @@ public class DigitalClock{
       }
     
     
+    //increment hours by 1.
+     public void incrementHr(){
+          hours++;
+      }
+    
+    
+    //increment minutes by 1.
+     public void incrementMin(){
+          minutes++;
+      }
+      
+      
 }//end class 
