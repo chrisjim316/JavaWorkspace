@@ -1,0 +1,33 @@
+/*
+ * TimePeriod is an object that contains the information of the specific day and month.
+ * Will be used for booking hotel rooms and determining the availibility of schedules.  
+ * Will include intervals in the future.
+ */
+ 
+ public class TimePeriod{
+ 
+      private int day;
+      private int month; 
+      
+      public TimePeriod(int d, int m){
+          day = d;
+          month = m; 
+      }
+      
+      public int getDay(){
+          return day;
+      }
+      
+      public int getMonth(){
+          return month; 
+      }
+      
+      public void setDay(int d){
+          day = d;
+      }
+      
+      public void setMonth(int m){
+          month = m; 
+      }
+      
+ }//end class 
