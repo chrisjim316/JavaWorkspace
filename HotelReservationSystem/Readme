@@ -1,5 +1,5 @@
 /*
- * Last modified: April 14th, 2017
+ * Last modified: April 21th, 2017
  * This program allows guests to book their reservations weeks, months in advance.
  * Guests will be able to easily check in when they arrive. 
  * Language: Java
@@ -8,16 +8,21 @@
 //DRAFT IN PROGRESS
  Classes that will be included:
         Public class Reservation 
-          -timePeriod //to be added 
-          -guestName
-          -roomNumber
+          -timePeriod //to be added. 
+          -guestName.
+          -roomNumber.
         Hotel
-          - rooms[]Arraylist
-          - waitlist ArrayList 
-          - methods: requestRoom, cancelReservation 
+          - rooms[]Arraylist.
+          - waitlist ArrayList.  
+          - methods: requestRoom, cancelReservation. 
         Room 
           - Pricing 
+        TimePeriod
+          - get and set methods. 
+          - private instance variable day and month. 
+          - intervals will be added.
         TestRun
           - Asking for user input and output systematic response for now. 
-          - GUI application in development 
+          - GUI application in development. 
+          
           
