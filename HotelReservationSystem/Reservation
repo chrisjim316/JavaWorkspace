@@ -1,15 +1,16 @@
 /*
  * The Reservation object is the building block of the data in the system. 
- * The instance variable timePeriod will be added in further editions.
  */
 
 public class Reservation{
     private String guestName;
     private int roomNumber; 
+    private ArrayList<timePeriod> timePeriods; //arrayList containing timePeriod objects.  
     
-    public Reservation(String name, int number){
+    public Reservation(String name, int number, ArrayList<timePeriod> timePeriods){
         guestName = name;
         roomNumber = number;
+        timePeriods = new ArrayList<timePeriod>(); 
     }
     
     public int getRoomNumber(){
