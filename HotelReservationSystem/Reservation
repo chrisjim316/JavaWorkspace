@@ -3,14 +3,15 @@
  */
 
 public class Reservation{
+
     private String guestName;
     private int roomNumber; 
-    private ArrayList<timePeriod> timePeriods; //arrayList containing timePeriod objects.  
+    private timePeriod timeP; 
     
-    public Reservation(String name, int number, ArrayList<timePeriod> timePeriods){
+    public Reservation(String name, int number, int d, int m){
         guestName = name;
         roomNumber = number;
-        timePeriods = new ArrayList<timePeriod>(); 
+        timeP = new timePeriod(d, m);
     }
     
     public int getRoomNumber(){
@@ -21,4 +22,4 @@ public class Reservation{
         return guestName;
     }
     
-}
+}//end class 
