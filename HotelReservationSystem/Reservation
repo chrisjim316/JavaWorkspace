@@ -1,5 +1,6 @@
 /*
  * The Reservation object is the building block of the data in the system. 
+ * A Reservation object contains the name of guest, room number, and the specific date of checking in.
  */
 
 public class Reservation{
@@ -8,10 +9,10 @@ public class Reservation{
     private int roomNumber; 
     private timePeriod timeP; 
     
-    public Reservation(String name, int number, int d, int m){
+    public Reservation(String name, int number, int day, int month){
         guestName = name;
         roomNumber = number;
-        timeP = new timePeriod(d, m);
+        timeP = new timePeriod(day, month);
     }
     
     public int getRoomNumber(){
