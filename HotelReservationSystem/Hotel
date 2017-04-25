@@ -14,7 +14,7 @@ public class Hotel{
     public Reservation requestRoom(String guestName){
         for(int i = 0; i < hotelRooms.length; i++){
             if( hotelRooms[i] == null){
-                hotelRooms[i] = new Reservation(guestName, i);
+                hotelRooms[i] = new Reservation(guestName, i, day, month);
                 return hotelRooms[i];
             }
         }
