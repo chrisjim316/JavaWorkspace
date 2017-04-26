@@ -4,7 +4,8 @@ public class Hotel{
 
     private Reservation[] hotelRooms;
     private ArrayList<String> waitList = new ArrayList<String>();     
-    
+    private static String[] months = {"January", "February", "March", "April", "May", "June", "July", "August",
+    "September", "October", "November", "December"}; 
     
     //creates 50 default reservations for the hotel of 100 rooms to test methods and debug. 
     
@@ -39,10 +40,12 @@ public class Hotel{
     
         int roomNum = res.getRoomNumber();
         String guestName = res.getGuestName();
+        int day = res.getDay();
+        int monthIndex = res.getMonth() - 1;
         
         if(hotelRooms[roomNum] != null){
             hotelRooms[roomNum] = null;
-                 System.out.println("Dear " + guestName + "your reservation has been successfully cancelled.");
+                 System.out.println("Dear " + guestName + ", your reservation on " + months[monthIndex] + " " + day + " has been successfully cancelled.");
                  System.out.println("In the meantime please check out our other wonderful services.");  
         } else {        
                  System.out.println("Dear " + guestName + "there was no reservation associated with your account.");
