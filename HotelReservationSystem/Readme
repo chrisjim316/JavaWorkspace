@@ -6,12 +6,13 @@
 //DRAFT IN PROGRESS
  Classes that will be included:
         Public class Reservation 
-          -timePeriod 
+          -timePeriod. 
           -guestName.
           -roomNumber.
         Hotel
-          - hotelRooms ArrayList
+          - hotelRooms ArrayList.
           - waitList ArrayList.  
+          - months ArrayList.
           - methods: requestRoom, cancelReservation. 
           - A call to Hotel's constructor creates multiple reservations in the system //to debug and test. 
         Room 
