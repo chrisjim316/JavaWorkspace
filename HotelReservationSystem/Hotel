@@ -54,6 +54,9 @@ public class Hotel{
         
     }
     
-    
+    //outputs information on reservation (date, roomNumber, name)  
+    public String toString(){
+        return ""; //to be replaced. 
+    }
     
 }//end class 
