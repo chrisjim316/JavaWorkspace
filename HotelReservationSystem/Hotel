@@ -54,9 +54,15 @@ public class Hotel{
         
     }
     
-    //outputs information on reservation (date, roomNumber, name)  
+    //outputs information on reservation (date, roomNumber, guestName)  
     public String toString(){
-        return ""; //to be replaced. 
+    
+        int roomNum = res.getRoomNumber();
+        String guestName = res.getGuestName();
+        int day = res.getDay();
+        int monthIndex = res.getMonth() - 1;
+        
+        return "Name of guest: " + guestName + "\nroomNumber: " + roomNum + "\nDate: " + months[monthIndex] + " " + day; 
     }
     
 }//end class 
