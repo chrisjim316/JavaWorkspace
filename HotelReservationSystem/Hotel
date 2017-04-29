@@ -4,16 +4,27 @@ public class Hotel{
 
     private Reservation[] hotelRooms;
     private ArrayList<String> waitList = new ArrayList<String>();     
-    private static String[] months = {"January", "February", "March", "April", "May", "June", "July", "August",
-    "September", "October", "November", "December"}; 
+
     
-    //creates 50 default reservations for the hotel of 100 rooms to test methods and debug. 
+    //creates 30 default reservations for the hotel of 50 rooms to test methods and debug. 
     
     public Hotel(){
+        hotelRooms = new Reservation[50];
         for(int i = 0; i < 50; i++){
-            hotelRooms[i] = new Reservation("hello", i, 3, 31);
+            hotelRooms[i] = new Reservation("Wolverine", i, 3, 31);
         }    
     }
+    
+    
+    //creates a customized hotel with numRooms; 
+    
+    public Hotel(int numRooms){
+        hotelRooms = new Reservation[numRooms];
+        for(int i = 0; i < numRooms-10; i++){
+            hotelRooms[i] = new Reservation("hello", i, 4, 31);
+        }    
+    }
+    
     
     
     //create reservation if there are an empty room for the guest.
