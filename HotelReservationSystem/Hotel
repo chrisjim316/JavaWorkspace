@@ -21,7 +21,7 @@ public class Hotel{
     //@return null if no empty rooms are found.
     //@return Reservation if a reservation has been created for an empty room
     
-    public Reservation requestRoom(String guestName){
+    public Reservation requestRoom(String guestName, int day, int month){
         for(int i = 0; i < hotelRooms.length; i++){
             if( hotelRooms[i] == null){
                 hotelRooms[i] = new Reservation(guestName, i, day, month);
@@ -55,7 +55,7 @@ public class Hotel{
     }
     
     //outputs information on reservation (date, roomNumber, guestName)  
-    public String toString(){
+    public String toString(Reservation res){
     
         int roomNum = res.getRoomNumber();
         String guestName = res.getGuestName();
