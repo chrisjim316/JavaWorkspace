@@ -9,14 +9,12 @@
           -timePeriod. 
           -guestName.
           -roomNumber.
+          -toString outputs information on reservation. 
         Hotel
-          - hotelRooms ArrayList.
-          - waitList ArrayList.  
-          - months ArrayList.
+          - hotelRooms -> array of Reservation objects.
+          - waitList -> ArrayList.  
           - methods: requestRoom, cancelReservation. 
-          - A call to Hotel's constructor creates multiple reservations in the system //to debug and test. 
-        Room 
-          - Pricing 
+          - A call to Hotel's constructor creates multiple reservations in the system.
         TimePeriod
           - get and set methods. 
           - private instance variable day and month. 
@@ -29,6 +27,14 @@
           
 
 Notes(Potentially added):
- * Guests could specify the date of checkIn and checkOut.
- * The system creates a reservation for the guest if possible, otherwise it suggests another date. 
- * If the hotel rooms are all booked the system outputs an apology and redirects the user back to the home page. 
+- Guests could specify the date of checkIn and checkOut.
+- The system creates a reservation for the guest if possible, otherwise it suggests another date. 
+- If the hotel rooms are all booked the system outputs an apology and redirects the user back to the home page. 
+- Sign in 
+- Storing sign in info
+- Book transportation
+- number of adults and children 
+- add year to timePeriod
+- checking time: 12:60:60 
+- RoomType 
+- Pricing of each room. 
