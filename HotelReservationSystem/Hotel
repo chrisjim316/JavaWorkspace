@@ -11,7 +11,7 @@ public class Hotel{
     public Hotel(){
         hotelRooms = new Reservation[50];
         for(int i = 0; i < 50; i++){
-            hotelRooms[i] = new Reservation("Wolverine", i, 3, 31);
+            hotelRooms[i] = new Reservation("Mr. Wolverine", i, 3, 31);
         }    
     }
     
@@ -21,7 +21,7 @@ public class Hotel{
     public Hotel(int numRooms){
         hotelRooms = new Reservation[numRooms];
         for(int i = 0; i < numRooms-10; i++){
-            hotelRooms[i] = new Reservation("hello", i, 4, 31);
+            hotelRooms[i] = new Reservation("Ms. Wolverina", i, 4, 31);
         }    
     }
     
@@ -45,15 +45,13 @@ public class Hotel{
     
     
     //cancel this particular reservation 
-    //to be added: the guest can only cancel the reservation two days prior to check in.
+    //potentially added: the guest can only cancel the reservation two days prior to check in.
     
     public void cancelReservation(Reservation res){
     
         int roomNum = res.getRoomNumber();
         String guestName = res.getGuestName();
-        int day = res.getDay();
-        int monthIndex = res.getMonth() - 1;
-        
+
         if(hotelRooms[roomNum] != null){
                  hotelRooms[roomNum] = null;
                  System.out.println("Dear " + guestName + ", your reservation has been successfully cancelled.");
