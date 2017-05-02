@@ -8,6 +8,8 @@
  
       private int day;
       private int month; 
+      private int minutes; 
+      private int hours; 
       
       //default constructor 
       public timePeriod(){
@@ -28,6 +30,14 @@
           return month; 
       }
       
+      public int getMin(){
+          return minutes;
+      }
+      
+      public int getHours(){
+          return hours; 
+      }
+      
       public void setDay(int d){
           day = d;
       }
@@ -35,5 +45,31 @@
       public void setMonth(int m){
           month = m; 
       }
+      
+      public void setHour(int hour){
+          hours = hour;
+      }
+      
+      public void setMinute(int min){
+          minutes = min; 
+      }
+      
+      public void incrementMinute(int min){
+          minutes += min;
+          hours += minutes/60;
+          minutes %= 60;
+          
+          day += hours/24; 
+          hours %= 24; 
+          
+          month += day/31;
+          day %= 31; 
+      }
+      
+      public void incrementHour(int hour){
+          hours = hour; 
+      }
+     
+      
       
  }//end class 
