@@ -67,9 +67,16 @@
       }
       
       public void incrementHour(int hour){
-          hours = hour; 
+          hours += hour; 
+          day += hours/24; 
+          hours %= 24; 
+          
+          month += day/31;
+          day %= 31; 
       }
      
-      
+      public String toString(){
+          return ""; // to be replaced; 
+      }
       
  }//end class 
