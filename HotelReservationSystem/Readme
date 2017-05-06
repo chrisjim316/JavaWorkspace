@@ -19,10 +19,18 @@
           - get and set methods. 
           - private instance variable day and month. 
           - intervals will be added.
+        PricedRoom Interface 
+          - getPrice, getSize, toString 
+        Item
+          - price
+          - purchase method 
+        Bill 
+          - Total price based on all total items purchased 
         TestRun
           - Asking for user's information in order to request a room.
           - The system creates a reservation if the rooms are available on the dates specificed by the user. 
           - GUI application in development. 
+        
           
           
 
