@@ -1,0 +1,17 @@
+public class Bill{
+
+     private double totalPrice; 
+     
+     public Bill(){
+         totalPrice = 0.0; 
+     }
+     
+     public double getBill(){
+         return totalPrice; 
+     }
+     
+     public void addItem(Item object){
+         totalPrice += object.getAmount(); 
+     }
+     
+}
