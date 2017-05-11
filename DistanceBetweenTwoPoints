@@ -1,5 +1,6 @@
 /*
  * Calculates distance between two coordinates on the xy plane. 
+ * Possible round-off error using Math.sqrt. 
  */
  
 import java.util.Scanner;
