@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+//3 Abstract Classes
+abstract class Shape{
+  	public abstract String toString();
+}
+
+
+abstract class TwoDimensionalShape extends Shape{
+  	public double perimeter(){return 0.0;}
+  	public double area(){return 0.0;}
+  	public String toString(){
+	      return String.format("Area: %.2f %nPerimeter: %.2f%n", area(), perimeter());					 
+	}
+}
+
+abstract class ThreeDimensionalShape extends Shape{
+  	public double getVolume(){ return 0.0;}
+  	public double getSurfaceArea(){ return 0.0;}
+  	public String toString(){
+     		return String.format("Surface area: %.2f %nVolume: %.2f", getSurfaceArea(), getVolume());
+	}
+}
