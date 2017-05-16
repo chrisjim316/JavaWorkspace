@@ -21,3 +21,34 @@ abstract class ThreeDimensionalShape extends Shape{
      		return String.format("Surface area: %.2f %nVolume: %.2f", getSurfaceArea(), getVolume());
 	}
 }
+
+
+class Square extends TwoDimensionalShape{
+	private double side;
+	public Square(double s){
+		side = s;
+	}
+	public double area(){
+		return Math.pow(side, 2);
+	}
+	public double perimeter(){
+		return 4*side;
+	}
+}
+
+class Triangle extends TwoDimensionalShape{
+	private double side1;
+	private double side2;
+	private double side3;
+	private double heron;
+	public Triangle(double s1, double s2, double s3){
+		side1 = s1; side2 = s2; side3 = s3;
+	}
+	public double area(){
+		heron = (side1 + side2 + side3)/2;
+		return Math.sqrt(heron*(heron-side1)*(heron-side2)*(heron-side3));
+	}
+	public double perimeter(){
+		return side1+side2+side3;
+	}
+}
