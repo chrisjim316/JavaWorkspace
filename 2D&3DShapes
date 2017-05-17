@@ -23,6 +23,8 @@ abstract class ThreeDimensionalShape extends Shape{
 }
 
 
+//two dimensional shapes.
+
 class Square extends TwoDimensionalShape{
 	private double side;
 	public Square(double s){
@@ -50,5 +52,47 @@ class Triangle extends TwoDimensionalShape{
 	}
 	public double perimeter(){
 		return side1+side2+side3;
+	}
+}
+
+
+//three dimensional shapes.
+
+class Sphere extends ThreeDimensionalShape{
+	private double radius;
+	public Sphere(double r){
+		radius = r;
+	}
+	public double getVolume(){
+		return (4.0/3)*Math.PI * Math.pow(radius, 3);
+	}
+	public double getSurfaceArea(){
+		return 4* Math.pow(radius, 2)* Math.PI;	
+	}
+}
+
+class Cube extends ThreeDimensionalShape{
+	private double side;
+	public Cube(double s){
+		side = s;
+	}
+	public double getVolume(){
+		return Math.pow(side, 3);
+	}
+	public double getSurfaceArea(){
+		return Math.pow(side, 2) * 6;
+	}
+}
+
+class Tetrahedron extends ThreeDimensionalShape{
+	private double side;
+	public Tetrahedron(double s){
+		side = s;
+	}
+	public double getSurfaceArea(){
+		return Math.pow(side, 2) * Math.sqrt(3);
+	}
+	public double getVolume(){
+		return Math.pow(side, 3) * (1.0/(6 *Math.sqrt(2)));
 	}
 }
