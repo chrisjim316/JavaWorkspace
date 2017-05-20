@@ -71,5 +71,13 @@ public class Employee {
   public double getmonthlySalary(){
        return monthlySalary;
   }
+  
+  public String toString() {
+      return String.format("%n%n%s: %s%s: %s%n%s: %.2f%n%n",
+        "hourly employee", firstName + " " + lastName,
+        "social security number", socialSecurityNumber,
+        "monthly salary", + monthlySalary
+      );
+  }
 
 }//end class 
