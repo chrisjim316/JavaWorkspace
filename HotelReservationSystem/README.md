@@ -1,7 +1,6 @@
-/*
- * This program allows guests to book their reservations weeks, months in advance.
- * Guests will be able to book their reservations of hotel rooms based on available dates. 
- */
+### This program allows guests to book their reservations weeks, months in advance.
+### Guests will be able to book their reservations of hotel rooms based on available dates. 
+ 
  
 //DRAFT IN PROGRESS
  Classes that will be included:
